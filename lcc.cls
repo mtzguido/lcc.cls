@@ -1,3 +1,7 @@
+% Clase LaTeX para LCC
+% Por cualquier problema/mejora, ir a
+%  https://github.com/mtzguido/lcc.cls
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{lcc}[]
 
