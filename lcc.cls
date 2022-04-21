@@ -195,6 +195,7 @@
 	keepspaces=true,
 	showstringspaces=false,
 	columns=flexible,
+	belowskip=0pt,
 }
 
 % Código C
