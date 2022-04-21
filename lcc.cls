@@ -16,6 +16,13 @@
 \RequirePackage{enumerate}
 \RequirePackage{parskip}
 
+% No siempre es necesaria, pero si se requiere tikz,
+% hay que usar la librería babel para que ande junto al
+% paquete babel. Así que lo agrego para evitar dolores
+% de cabeza.
+\RequirePackage{tikz}
+\usetikzlibrary{babel}
+
 % Entorno para cosas ocultas.
 \NewEnviron{hide}{}{}
 
