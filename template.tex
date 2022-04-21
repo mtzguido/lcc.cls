@@ -1,0 +1,58 @@
+\documentclass{lcc}
+
+\materia{Materia X}
+\logo{unr.jpg}
+\practica{1 - Introducción a ...}
+
+% \commentstrue
+% \soluciones
+
+\begin{document}
+\maketitle
+
+Este es un ejemplo de una práctica. Dentro hay algunos if que pueden
+encenderse para mostrar las soluciones de los problemas.
+\guido{Por ejemplo, este es un comentario}
+
+\begin{problemaOff}[(Filósofos Comensales, Dijkstra)]
+    Esto es un problema oculto. Cambiar \texttt{problemaOff} a
+    \texttt{problema} para mostrarlo.
+\end{problemaOff}
+
+\begin{problema}
+    Esto es un problema.
+    \begin{solucion}
+        Acá está la solución.
+    \end{solucion}
+    \begin{solucion}[variante 2]
+        Acá hay otra solucion.
+    \end{solucion}
+\end{problema}
+
+\begin{problema}[(díficil)]
+    Esto es un problema con un tag opcional.
+\end{problema}
+
+\begin{problema}
+    Este problema tiene un fragmento de código C.
+    \begin{C}
+int main()
+{
+    return 0;
+}
+    \end{C}
+    Y tambien algo de codigo C inline: \cc{free(NULL)}.
+\end{problema}
+
+\begin{problema}
+    También puede incluirse código Bash.
+    \begin{Bash}
+a=0
+while [ $a -le 100 ]; do
+    echo $a
+    a=$((a+1))
+done
+    \end{Bash}
+\end{problema}
+
+\end{document}
