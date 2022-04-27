@@ -1,18 +1,43 @@
-\documentclass{lcc}
+\documentclass[practica]{lcc}
 
-\materia{Materia X}
-\logo{unr.jpg}
-\practica{1 - Introducción a ...}
+\codigo{R-999}
+\materia{Magia Negra}
+\num{1}
+\titulo{Introducción a las Artes Ocultas}
 
-% \commentstrue
+\commentstrue
 % \soluciones
 
 \begin{document}
+
 \maketitle
 
 Este es un ejemplo de una práctica. Dentro hay algunos if que pueden
 encenderse para mostrar las soluciones de los problemas.
 \guido{Por ejemplo, este es un comentario}
+
+\begin{problema}
+    El siguiente código computa el valor $\frac{1}{\sqrt{x}}$. Explique
+    su funcionamiento.
+    \begin{C}
+float Q_rsqrt(float number)
+{
+    long i;
+    float x2, y;
+    const float threehalfs = 1.5F;
+
+    x2 = number * 0.5F;
+    y  = number;
+    i  = * (long *) &y;                   // evil floating point bit level hacking
+    i  = 0x5f3759df - (i >> 1);           // what the fuck?
+    y  = * (float *) &i;
+    y  = y * (threehalfs - (x2 * y * y)); // 1st iteration
+    y  = y * (threehalfs - (x2 * y * y)); // 2nd iteration, this can be removed
+
+    return y;
+}
+    \end{C}
+\end{problema}
 
 \begin{problemaOff}[(Filósofos Comensales, Dijkstra)]
     Esto es un problema oculto. Cambiar \texttt{problemaOff} a
