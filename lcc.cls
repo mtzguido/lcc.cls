@@ -15,34 +15,44 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \def\@tipo{} % Tipo de documento
 \def\@tipop{} % Tipo, ``pretty-printed''
 
+% Determina si se usó alguna de las opciones estándar, por lo tanto
+% hay un prefijo y posiblemente un número. Si no, hay sólo un título.
+\newif\ifk\kfalse
+
 \DeclareOption{apunte}{
     \def\@tipo{apunte}
     \def\@tipop{Apunte}
+    \ktrue
     \date{}
 }
 \DeclareOption{practica}{
     \def\@tipo{practica}
     \def\@tipop{Práctica}
+    \ktrue
     \date{}
 }
 \DeclareOption{tp}{
     \def\@tipo{tp}
     \def\@tipop{Trabajo Práctico}
+    \ktrue
     \date{}
 }
 \DeclareOption{parcial}{
     \def\@tipo{parcial}
     \def\@tipop{Examen Parcial}
+    \ktrue
     \datostrue
 }
 \DeclareOption{recuperatorio}{
     \def\@tipo{recuperatorio}
     \def\@tipop{Examen Recuperatorio}
+    \ktrue
     \datostrue
 }
 \DeclareOption{final}{
     \def\@tipo{final}
     \def\@tipop{Examen Final}
+    \ktrue
     \datostrue
 }
 
@@ -211,16 +221,18 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 }
 
 \def\@fulltitle{%
-    {\@tipop}
-    \ifx\@num\empty
-    \else
-     {\@num}
+    \ifk
+     {\@tipop}
+     \ifx\@num\empty\else
+      {\@num}
+     \fi
+     \ifx\@titulo\empty\else
+      {--}
+     \fi
     \fi
-    \ifx\@titulo\empty
-    \else
-    --
-    {\@titulo}
-    \fi
+    \ifx\@titulo\empty\else
+     {\@titulo}%
+    \fi%
 }
 \newcommand{\fulltitle}[1]{\def\@fulltitle{#1}}
 
