@@ -272,8 +272,6 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 
 \RequirePackage{listings}
 \lstset{
-    basicstyle=\ttfamily,
-    keywordstyle = \color{blue},
     keepspaces=true,
     showstringspaces=false,
     columns=flexible,
@@ -283,6 +281,8 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 % Código C
 \lstdefinestyle{C}{
     language=C,
+    basicstyle=\ttfamily,
+    keywordstyle = \color{blue},
     morekeywords=inline,
     morekeywords=bool,
     morekeywords=parallel,
@@ -294,10 +294,21 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 % Código Bash
 \lstdefinestyle{Bash}{
     language=bash,
+    basicstyle=\ttfamily,
+    keywordstyle = \color{blue},
 }
 \lstnewenvironment{Bash}[1][]{\lstset{style=bash}}{}
 \newcommand{\bash}[1]{\lstinline[style=bash]`#1`}
 \newcommand{\bashsource}[1]{\lstinputlisting[style=bash,basicstyle=\ttfamily\small]{#1}}
+
+% Código Erlang
+\lstdefinestyle{erlang}{
+    language=erlang,
+    basicstyle=\ttfamily,
+}
+\lstnewenvironment{Erl}[1][]{\lstset{style=erlang}}{}
+\newcommand{\erl}[1]{\lstinline[style=erlang]`#1`}
+\newcommand{\erlsource}[1]{\lstinputlisting[style=erlang,basicstyle=\ttfamily\small]{#1}}
 
 % Opcional: título y autor para metadata del PDF.
 % símbolos especiales que no aparecen.
