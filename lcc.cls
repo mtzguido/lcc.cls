@@ -91,8 +91,6 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 
 \renewcommand{\footrulewidth}{0.4pt}
 \renewcommand{\headrulewidth}{0.4pt}
-\addtolength{\textheight}{-40pt}
-\addtolength{\headheight}{59pt}
 
 % TODO: Uniformidad. Definir entornos para no usar contador, etc.
 
@@ -195,6 +193,8 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 
 % Estilo primer página, con header
 \fancypagestyle{ps_primera}{
+    \addtolength{\textheight}{-40pt}
+    \addtolength{\headheight}{59pt}
     \ifx\@logo\empty
         \lhead{\leyenda}
     \else
