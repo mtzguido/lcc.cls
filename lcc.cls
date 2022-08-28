@@ -282,6 +282,8 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
     showstringspaces=false,
     columns=flexible,
     belowskip=0pt,
+    % Hack para soportar tildes/ñ en listings.
+    literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1,
 }
 
 % Código C
