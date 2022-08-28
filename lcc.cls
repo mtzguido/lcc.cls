@@ -70,6 +70,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \RequirePackage{amssymb}
 \RequirePackage{parskip}
 \RequirePackage{hyperref}
+\RequirePackage{lastpage}
 
 % tikz es necesario para el logo embebido. Pero, incluso si no lo
 % fuera, para usarlo se necesita agregar la *librería* babel para que
@@ -188,32 +189,31 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \def\@fancyfooter{
     \lfoot{\small \@shorttitle}
     \cfoot{\small \@date}
-    \rfoot{\small Página \thepage}
+    \rfoot{\small Página \thepage/\pageref*{LastPage}}
 }
 
 % Estilo primer página, con header
 \fancypagestyle{ps_primera}{
-    \addtolength{\textheight}{-40pt}
-    \addtolength{\headheight}{59pt}
-    \ifx\@logo\empty
-        \lhead{\leyenda}
-    \else
-        \lhead{
-            \hspace{5mm}
-            \begin{minipage}[c][3cm][c]{3cm}
-                \begin{center}
-                    \@logo
-                \end{center}
-            \end{minipage}
-        }
-        \rhead{\leyenda}
-    \fi
+    \addtolength{\topmargin}{-0.3cm}
+    \addtolength{\headheight}{2.4cm}
+    \lhead{
+        \hspace{0.5cm}
+        \begin{minipage}[c][3cm][c]{3cm}
+            \begin{center}
+                \@logo
+            \end{center}
+        \end{minipage}
+    }
+    \rhead{
+        \leyenda
+    }
+    \chead{}
     \@fancyfooter
 }
 
 % Estilo de página 2 en adelante.
 \fancypagestyle{ps_resto}{
-    \lhead{\small \@materia}
+    \lhead{\small \@materiafull}
     \chead{}
     \rhead{}
 
@@ -258,16 +258,22 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \newcommand{\shorttitle}[1]{\def\@shorttitle{#1}}
 
 \pagestyle{ps_resto}
-\def\maketitle{
-    \thispagestyle{ps_primera}
+\thispagestyle{ps_primera} % Aplica sólo a la primera página
 
+% Hack: restar algo de altura al texto, compensando lo que agregamos al
+% headheight en el pagestyle ps_primera. Luego, al correr \maketitle, le
+% sumamos la cantidad opuesta para que el resto de las páginas no se
+% vea afectada. Desagradable es poco.
+\addtolength{\textheight}{-2.1cm} % -2.1 = -2.4 + 0.3 (ver arriba)
+\def\maketitle{
     \ifdatos
       \datosalumno
     \fi
-
+    \vspace{1cm}
     \begin{center}
         \@fancytitle
     \end{center}
+    \addtolength{\textheight}{2.1cm}
 }
 
 \RequirePackage{listings}
@@ -310,6 +316,22 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \newcommand{\erl}[1]{\lstinline[style=erlang]`#1`}
 \newcommand{\erlsource}[1]{\lstinputlisting[style=erlang,basicstyle=\ttfamily\small]{#1}}
 
+% Código FD4
+\lstdefinestyle{FDD}{
+    basicstyle=\ttfamily,
+    keywordstyle = \color{blue},
+    morekeywords=let,
+    morekeywords=in,
+    morekeywords=fix,
+    morekeywords=print,
+    morekeywords=ifz then else,
+    morekeywords=add subt,
+    morekeywords=Nat,
+}
+\lstnewenvironment{FDD}[1][]{\lstset{style=fdd}}{}
+\newcommand{\fdd}[1]{\lstinline[style=fdd]`#1`}
+\newcommand{\fddsource}[1]{\lstinputlisting[style=fdd,basicstyle=\ttfamily\small]{#1}}
+
 % Opcional: título y autor para metadata del PDF.
 % símbolos especiales que no aparecen.
 \def\@pdftitle{}
@@ -337,8 +359,13 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 }
 
 % Creado a partir de unr.jpg, convirtiendo a SVG con una herramienta online
-% y luego manualmente a esta invocación tikz. TODO: automatizar, y conseguir
-% un SVG *OFICIAL* desde la UNR.
+% y luego manualmente a esta invocación tikz.
+% TODO: automatizar, y conseguir un SVG *OFICIAL* desde la UNR.
+
+% Para activar un marco alrededor del logo UNR, usar:
+% \usetikzlibrary{backgrounds}
+% y agregar 'framed' a las opciones del tikzpicture.
+
 \newcommand{\LogoUNR}{
     \resizebox{2.7cm}{!}{
         \begin{tikzpicture}[yscale=-1]
