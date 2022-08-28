@@ -295,7 +295,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
     morekeywords=bool,
     morekeywords=parallel,
 }
-\lstnewenvironment{C}[1][]{\lstset{style=C}}{}
+\lstnewenvironment{C}[1][]{\lstset{style=C,#1}}{}
 \newcommand{\cc}[1]{\lstinline[style=C]`#1`}
 \newcommand{\csource}[1]{\lstinputlisting[style=C,basicstyle=\ttfamily\small]{#1}}
 
@@ -305,7 +305,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
     basicstyle=\ttfamily,
     keywordstyle = \color{blue},
 }
-\lstnewenvironment{Bash}[1][]{\lstset{style=bash}}{}
+\lstnewenvironment{Bash}[1][]{\lstset{style=bash,#1}}{}
 \newcommand{\bash}[1]{\lstinline[style=bash]`#1`}
 \newcommand{\bashsource}[1]{\lstinputlisting[style=bash,basicstyle=\ttfamily\small]{#1}}
 
@@ -314,7 +314,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
     language=erlang,
     basicstyle=\ttfamily,
 }
-\lstnewenvironment{Erl}[1][]{\lstset{style=erlang}}{}
+\lstnewenvironment{Erl}[1][]{\lstset{style=erlang,#1}}{}
 \newcommand{\erl}[1]{\lstinline[style=erlang]`#1`}
 \newcommand{\erlsource}[1]{\lstinputlisting[style=erlang,basicstyle=\ttfamily\small]{#1}}
 
@@ -330,7 +330,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
     morekeywords=add subt,
     morekeywords=Nat,
 }
-\lstnewenvironment{FDD}[1][]{\lstset{style=fdd}}{}
+\lstnewenvironment{FDD}[1][]{\lstset{style=fdd,#1}}{}
 \newcommand{\fdd}[1]{\lstinline[style=fdd]`#1`}
 \newcommand{\fddsource}[1]{\lstinputlisting[style=fdd,basicstyle=\ttfamily\small]{#1}}
 
