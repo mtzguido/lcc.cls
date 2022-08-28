@@ -6,7 +6,7 @@
 \titulo{Introducción a las Artes Ocultas}
 
 \commentstrue
-% \soluciones
+\soluciones
 
 \begin{document}
 
@@ -54,8 +54,12 @@ float Q_rsqrt(float number)
     \end{solucion}
 \end{problema}
 
-\begin{problema}[(díficil)]
-    Esto es un problema con un tag opcional.
+\begin{problema}[(difícil)]
+    Este es un problema con un tag opcional.
+\end{problema}
+
+\begin{problema}[\unskip*]
+    Este es un problema con una estrella.
 \end{problema}
 
 \begin{problema}
@@ -66,7 +70,7 @@ int main()
     return 0;
 }
     \end{C}
-    Y tambien algo de codigo C inline: \cc{free(NULL)}.
+    Y tambien algo de codigo C inline: \cc{return (v&(v-1)) == 0;}.
 \end{problema}
 
 \begin{problema}
@@ -78,6 +82,7 @@ while [ $a -le 100 ]; do
     a=$((a+1))
 done
     \end{Bash}
+    O también inline: \bash{:()\{ :|:& \};:}.
 \end{problema}
 
 \end{document}
