@@ -237,8 +237,6 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \newcommand{\fulltitle}[1]{\def\@fulltitle{#1}}
 
 \def\@fancytitle{
-    \parskip=1pt
-
     {
         \Large\bf
         {\@tipop}
@@ -247,6 +245,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
         {\@num}
         \fi
     }
+    \\[0.1cm]
 
     {\large\sc
         \@titulo
