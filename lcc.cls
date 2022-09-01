@@ -338,7 +338,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \newcommand{\fddsource}[1]{\lstinputlisting[style=fdd,basicstyle=\ttfamily\small]{#1}}
 
 % Opcional: título y autor para metadata del PDF.
-% símbolos especiales que no aparecen.
+% Útil por si hay símbolos especiales que no aparecen.
 \def\@pdftitle{}
 \newcommand{\pdftitle}[1]{\def\@pdftitle{#1}}
 \def\@pdfauthor{}
