@@ -298,6 +298,10 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \newcommand{\cc}[1]{\lstinline[style=C]`#1`}
 \newcommand{\csource}[1]{\lstinputlisting[style=C,basicstyle=\ttfamily\small]{#1}}
 
+% TODO: Por alguna razón queda bastante espacio debajo de un listing
+% como \begin{C}...\end{C}. Pero con \csource, no queda el espacio.
+% Corregir, debería ser exactamente igual
+
 % Código Bash
 \lstdefinestyle{Bash}{
     language=bash,
