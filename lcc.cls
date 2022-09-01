@@ -173,8 +173,8 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \def\@leyA{Facultad de Ciencias Exactas, Ingeniería y Agrimensura}
 \def\@leyB{Escuela de Ciencias Exactas y Naturales}
 \def\@leyC{Departamento de Ciencias de la Computación}
-\def\@leyD{\@materiafull}
-\def\@leyE{}
+\def\@leyD{} % Licenciatura en Ciencias de la Computación
+\def\@leyE{\@materiafull}
 
 \newcommand{\leyenda}[0]{
     \begin{tabular}{l}
