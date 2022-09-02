@@ -1,26 +1,27 @@
 \documentclass[practica]{lcc}
 
-\codigo{R-999}
-\materia{Magia Negra}
+\codigo{R-987}
+\materia{Tipografía en \LaTeX}
 \num{1}
-\titulo{Introducción a las Artes Ocultas}
+\titulo{Práctica de Ejemplo}
 
-\commentstrue
-\soluciones
+% Para dejar comentarios
+% \def\alan{\comm{red}{Alan Turing}}
 
-\def\tagproblema{Ej. }
+\commentstrue % Mostrar comentarios
+\soluciones   % Mostrar soluciones
 
 \begin{document}
 
 \maketitle
 
 Este es un ejemplo de una práctica. Dentro hay algunos if que pueden
-encenderse para mostrar las soluciones de los problemas.
+encenderse para mostrar las soluciones de los ejercicios.
 \guido{Por ejemplo, este es un comentario}
 
-\begin{problema}
-    El siguiente código computa el valor $\frac{1}{\sqrt{x}}$. Explique
-    su funcionamiento.
+\begin{ejercicio}
+    El siguiente código computa una aproximación a
+    $\frac{1}{\sqrt{x}}$. Explique su funcionamiento.
     \begin{C}
 float Q_rsqrt(float number)
 {
@@ -39,33 +40,47 @@ float Q_rsqrt(float number)
     return y;
 }
     \end{C}
-\end{problema}
+    \begin{solucion}
+        Ver: \url{https://www.youtube.com/watch?v=p8u_k2LIZyo}
+        \begin{C}
+/* Código dentro de solución */
+        \end{C}
+    \end{solucion}
+\end{ejercicio}
 
-\begin{problemaOff}[(Filósofos Comensales, Dijkstra)]
-    Esto es un problema oculto. Cambiar \texttt{problemaOff} a
-    \texttt{problema} para mostrarlo.
-\end{problemaOff}
+\begin{ejercicioOff}[(Filósofos Comensales, Dijkstra)]
+    Esto es un ejercicio oculto. Cambiar \texttt{ejercicioOff} a
+    \texttt{ejercicio} para mostrarlo.
+\end{ejercicioOff}
 
-\begin{problema}
-    Esto es un problema.
+\begin{ejercicio}
+    Esto es un ejercicio.
     \begin{solucion}
         Acá está la solución.
     \end{solucion}
     \begin{solucion}[variante 2]
         Acá hay otra solucion.
     \end{solucion}
-\end{problema}
+\end{ejercicio}
 
-\begin{problema}[(difícil)]
-    Este es un problema con un tag opcional.
-\end{problema}
+\begin{ejercicio}[(difícil)]
+    Este es un ejercicio con un tag opcional.
+\end{ejercicio}
 
-\begin{problema}[\unskip*]
-    Este es un problema con una estrella.
-\end{problema}
+\begin{ejercicio}[\unskip*]
+    Este es un ejercicio con una estrella.
+\end{ejercicio}
 
-\begin{problema}
-    Este problema tiene un fragmento de código C.
+\begin{ejercicio}
+    ¿Es la siguiente definición de \hask{fibs} una estructura cíclica?
+    \begin{Hask}
+fibs :: [Integer]
+fibs = 1 : 1 : zipWith (+) fibs (tail fibs)
+    \end{Hask}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Este ejercicio tiene un fragmento de código C.
     \begin{C}
 int main()
 {
@@ -73,9 +88,9 @@ int main()
 }
     \end{C}
     Y tambien algo de codigo C inline: \cc{return (v&(v-1)) == 0;}.
-\end{problema}
+\end{ejercicio}
 
-\begin{problema}
+\begin{ejercicio}
     También puede incluirse código Bash.
     \begin{Bash}
 a=0
@@ -85,6 +100,37 @@ while [ $a -le 100 ]; do
 done
     \end{Bash}
     O también inline: \bash{:()\{ :|:& \};:}.
-\end{problema}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Acá hay Python:
+    \begin{Py}
+def ack(m, n):
+    if m == 0:
+        return n+1
+    elif n == 0:
+        return ack (m-1, 1)
+    else:
+        return ack (m-1, ack (m, n-1))
+    \end{Py}
+\end{ejercicio}
+
+\section{Una Sección}
+
+Acá vienen más ejercicios:
+
+\begin{ejercicio}
+    El siguiente código Erlang implementa la función factorial.
+    Explique cómo, dado que no hay ninguna función recursiva a la vista.
+    \begin{Erl}
+y(F) ->
+	G = (fun (X) -> F (fun (Y) -> (X(X))(Y) end) end),
+	G(G).
+
+fact(N) ->
+	F0 = fun (F) -> (fun (X) -> if X == 0 -> 1; true -> X * F (X-1) end end) end,
+	(y(F0))(N).
+    \end{Erl}
+\end{ejercicio}
 
 \end{document}
