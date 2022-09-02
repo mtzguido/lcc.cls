@@ -192,27 +192,23 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
     \rfoot{\small Página \thepage/\pageref*{LastPage}}
 }
 
-% Estilo primer página, con header
+% Estilo de página 1
 \fancypagestyle{ps_primera}{
-    \addtolength{\topmargin}{-0.3cm}
-    \addtolength{\headheight}{2.4cm}
-    \lhead{
-        \hspace{0.5cm}
-        \begin{minipage}[c][3cm][c]{3cm}
-            \begin{center}
-                \@logo
-            \end{center}
-        \end{minipage}
-    }
-    \rhead{
-        \leyenda
-    }
+    % Achicar \headsep para que el header quede bien ubicado.
+    % El default parece ser 25pt.
+    \setlength{\headsep}{0pt}
+    \lhead{}
     \chead{}
+    \rhead{}
+
     \@fancyfooter
 }
 
 % Estilo de página 2 en adelante.
 \fancypagestyle{ps_resto}{
+    % Achicar un poco esta separación en el resto de las
+    % páginas: es muy grande.
+    \setlength{\headsep}{10pt}
     \lhead{\small \@materiafull}
     \chead{}
     \rhead{}
@@ -245,7 +241,6 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
         {\@num}
         \fi
     }
-    \\[0.1cm]
 
     {\large\sc
         \@titulo
@@ -257,22 +252,39 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \newcommand{\shorttitle}[1]{\def\@shorttitle{#1}}
 
 \pagestyle{ps_resto}
-\thispagestyle{ps_primera} % Aplica sólo a la primera página
 
-% Hack: restar algo de altura al texto, compensando lo que agregamos al
-% headheight en el pagestyle ps_primera. Luego, al correr \maketitle, le
-% sumamos la cantidad opuesta para que el resto de las páginas no se
-% vea afectada. Desagradable es poco.
-\addtolength{\textheight}{-2.1cm} % -2.1 = -2.4 + 0.3 (ver arriba)
+% El headsep que fue restado.
+\addtolength{\textheight}{25pt}
+\def\makeheader{
+    \thispagestyle{ps_primera}
+    % Restar el \headsep de ps_resto
+    \addtolength{\textheight}{-\headsep}
+
+    % Logo y leyenda en título
+    \begin{minipage}{\linewidth}
+        \hspace{0.5cm}
+        \begin{minipage}[c][3cm][c]{3cm}
+            \begin{center}
+                \@logo
+            \end{center}
+        \end{minipage}
+        \hfill\leyenda
+    \end{minipage}
+    \hrule
+}
+\RequirePackage{printlen}
+
 \def\maketitle{
+    \makeheader
+    \vspace{3mm}
+
     \ifdatos
       \datosalumno
     \fi
-    \vspace{1cm}
+
     \begin{center}
         \@fancytitle
     \end{center}
-    \addtolength{\textheight}{2.1cm}
 }
 
 \RequirePackage{listings}
