@@ -61,7 +61,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 
 \LoadClass[11pt,a4paper]{article}
 
-\RequirePackage[spanish]{babel}
+\RequirePackage[spanish,es-noquoting]{babel}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[left=2cm,top=3cm,right=1.5cm,bottom=2.5cm]{geometry}
 \RequirePackage{fancyhdr}
