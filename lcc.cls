@@ -234,7 +234,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 
 \def\@fancytitle{
     {
-        \Large\bf
+        \large\bf
         {\@tipop}
         \ifx\@num\empty
         \else
@@ -242,7 +242,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
         \fi
     }
 
-    {\large\sc
+    {\LARGE\sc
         \@titulo
     }
 }
