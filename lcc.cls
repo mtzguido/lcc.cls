@@ -261,6 +261,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
     \addtolength{\textheight}{-\headsep}
 
     % Logo y leyenda en título
+    \noindent
     \begin{minipage}{\linewidth}
         \hspace{0.5cm}
         \begin{minipage}[c][3cm][c]{3cm}
