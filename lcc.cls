@@ -207,9 +207,6 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 
 % Estilo de página 2 en adelante.
 \fancypagestyle{ps_resto}{
-    % Achicar un poco esta separación en el resto de las
-    % páginas: es muy grande.
-    \setlength{\headsep}{10pt}
     \lhead{\small \@materiafull}
     \chead{}
     \rhead{}
