@@ -75,7 +75,8 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 % tikz es necesario para el logo embebido. Pero, incluso si no lo
 % fuera, para usarlo se necesita agregar la *librería* babel para que
 % ande junto al paquete babel. Sin ello, tenemos un error horrible de
-% compilación. Así que mejor tenerlo en todo caso.
+% compilación. Así que en todo caso lo dejaría, para evitar sorpresas
+% y dolores de cabeza para los usuarios.
 \RequirePackage{tikz}
 \usetikzlibrary{babel}
 \usetikzlibrary{svg.path}
