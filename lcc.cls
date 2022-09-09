@@ -274,7 +274,6 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
     \end{minipage}
     \hrule
 }
-\RequirePackage{printlen}
 
 \def\maketitle{
     \makeheader
