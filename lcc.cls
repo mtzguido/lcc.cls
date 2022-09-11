@@ -348,6 +348,24 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \newcommand{\fdd}[1]{\lstinline[style=fdd]`#1`}
 \newcommand{\fddsource}[1]{\lstinputlisting[style=fdd,basicstyle=\ttfamily\small]{#1}}
 
+% Código Python
+\lstdefinestyle{Python}{
+    basicstyle=\ttfamily,
+    keywordstyle = \color{blue},
+}
+\lstnewenvironment{Py}[1][]{\lstset{style=Python,#1}}{}
+\newcommand{\py}[1]{\lstinline[style=Python]`#1`}
+\newcommand{\pysource}[1]{\lstinputlisting[style=Python,basicstyle=\ttfamily\small]{#1}}
+
+% Código Haskell
+\lstdefinestyle{Haskell}{
+    basicstyle=\ttfamily,
+    keywordstyle = \color{blue},
+}
+\lstnewenvironment{Hask}[1][]{\lstset{style=Haskell,#1}}{}
+\newcommand{\hask}[1]{\lstinline[style=Haskell]`#1`}
+\newcommand{\hasksource}[1]{\lstinputlisting[style=Haskell,basicstyle=\ttfamily\small]{#1}}
+
 % Opcional: título y autor para metadata del PDF.
 % Útil por si hay símbolos especiales que no aparecen.
 \def\@pdftitle{}
