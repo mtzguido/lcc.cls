@@ -333,7 +333,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \newcommand{\erlsource}[1]{\lstinputlisting[style=erlang,basicstyle=\ttfamily\small]{#1}}
 
 % Código FD4
-\lstdefinestyle{FDD}{
+\lstdefinestyle{fdd}{
     basicstyle=\ttfamily,
     keywordstyle = \color{blue},
     morekeywords=let,
