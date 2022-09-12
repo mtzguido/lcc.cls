@@ -272,7 +272,9 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
                 \@logo
             \end{center}
         \end{minipage}
-        \hfill\leyenda
+        \hfill%
+        \leyenda
+        \hspace{0.5cm}
     \end{minipage}
     \hrule
 }
