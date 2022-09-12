@@ -100,8 +100,30 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \newcounter{problema}
 
 \newenvironment{problema}[1][\unskip]
-{\stepcounter{problema}
-\textbf{\arabic{problema} #1.~}}
+{
+    \stepcounter{problema}
+    \paragraph{\arabic{problema} #1.}
+}
+{}
+
+\newenvironment{ejemplo}[1][\unskip]
+{
+    \paragraph{Ejemplo #1.}
+}
+{}
+
+\newenvironment{nota}[1][\unskip]
+{
+    \paragraph{Nota #1:}
+}
+{}
+
+\newcounter{ejercicio}
+\newenvironment{ejercicio}
+{
+    \stepcounter{ejercicio}
+    \paragraph{Ejercicio \arabic{ejercicio}.}
+}
 {}
 
 \newenvironment{problemaOff}[1][\unskip]
@@ -119,19 +141,6 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \newenvironment{solucion}
 {\solucionOff}
 {\endsolucionOff}
-
-\newenvironment{ejemplo}[1][\unskip]
-{\textbf{Ejemplo} #1.~}
-{}
-
-\newenvironment{nota}[1][\unskip]
-{\textbf{Nota #1:}~}
-{}
-
-\newcounter{ejercicio}
-\newenvironment{ejercicio}
-{\stepcounter{ejercicio}\textbf{Ejercicio \arabic{ejercicio}.~}}
-{}
 
 % Comentarios
 \newif\ifcomments\commentsfalse
