@@ -99,10 +99,13 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 
 \newcounter{problema}
 
+% Los documentos pueden usar \def\tagproblema{..}
+\let\tagproblema\empty
+
 \newenvironment{problema}[1][\unskip]
 {
     \stepcounter{problema}
-    \paragraph{\arabic{problema} #1.}
+    \paragraph{\tagproblema\arabic{problema} #1.}
 }
 {}
 
@@ -115,14 +118,6 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \newenvironment{nota}[1][\unskip]
 {
     \paragraph{Nota #1:}
-}
-{}
-
-\newcounter{ejercicio}
-\newenvironment{ejercicio}
-{
-    \stepcounter{ejercicio}
-    \paragraph{Ejercicio \arabic{ejercicio}.}
 }
 {}
 
