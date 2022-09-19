@@ -154,7 +154,13 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \def\@logofile{}
 \newcommand{\logofile}[1]{\def\@logofile{#1}}
 
-\def\@logo{\LogoUNR}
+\def\@logo{
+    \ifx\@logofile\empty
+        \LogoUNR
+    \else
+        \includegraphics[width=2.7cm,keepaspectratio]{\@logofile}
+    \fi
+}
 
 \def\@codigo{}
 \newcommand{\codigo}[1]{\def\@codigo{#1}}
