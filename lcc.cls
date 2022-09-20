@@ -300,83 +300,84 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 
 \RequirePackage{listings}
 \lstset{
-    keepspaces=true,
-    showstringspaces=false,
-    columns=flexible,
-    belowskip=0pt,
+    keepspaces       = true,
+    showstringspaces = false,
+    columns          = flexible,
+    belowskip        = 0pt,
+    keywordstyle     = \color{blue},
+    %
     % Hack para soportar tildes/ñ en listings.
-    literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1,
+    literate         = {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1,
 }
 
 % Código C
-\lstdefinestyle{C}{
-    language=C,
-    basicstyle=\ttfamily,
-    keywordstyle = \color{blue},
-    morekeywords=inline,
-    morekeywords=bool,
-    morekeywords=parallel,
+\lstdefinelanguage{lcc_C}{
+    language     = C,
+    basicstyle   = \ttfamily,
+    morekeywords = inline,
+    morekeywords = bool,
+    morekeywords = parallel,
 }
-\lstnewenvironment{C}[1][]{\lstset{style=C,#1}}{}
-\newcommand{\cc}[1]{\lstinline[style=C]`#1`}
-\newcommand{\csource}[1]{\lstinputlisting[style=C,basicstyle=\ttfamily\small]{#1}}
+\lstnewenvironment{C}[1][]{\lstset{language=lcc_C,#1}}{}
+\newcommand{\cc}[1]{\lstinline[language=lcc_C]`#1`}
+\newcommand{\csource}[1]{\lstinputlisting[language=lcc_C,basicstyle=\ttfamily\small]{#1}}
 
 % TODO: Por alguna razón queda bastante espacio debajo de un listing
 % como \begin{C}...\end{C}. Pero con \csource, no queda el espacio.
 % Corregir, debería ser exactamente igual
 
 % Código Bash
-\lstdefinestyle{Bash}{
-    language=bash,
-    basicstyle=\ttfamily,
-    keywordstyle = \color{blue},
+\lstdefinelanguage{lcc_Bash}{
+    language     = bash,
+    basicstyle   = \ttfamily,
 }
-\lstnewenvironment{Bash}[1][]{\lstset{style=bash,#1}}{}
-\newcommand{\bash}[1]{\lstinline[style=bash]`#1`}
-\newcommand{\bashsource}[1]{\lstinputlisting[style=bash,basicstyle=\ttfamily\small]{#1}}
+\lstnewenvironment{Bash}[1][]{\lstset{language=lcc_bash,#1}}{}
+\newcommand{\bash}[1]{\lstinline[language=lcc_bash]`#1`}
+\newcommand{\bashsource}[1]{\lstinputlisting[language=lcc_bash,basicstyle=\ttfamily\small]{#1}}
 
 % Código Erlang
-\lstdefinestyle{erlang}{
-    language=erlang,
-    basicstyle=\ttfamily,
+\lstdefinelanguage{lcc_erlang}{
+    language     = erlang,
+    basicstyle   = \ttfamily,
 }
-\lstnewenvironment{Erl}[1][]{\lstset{style=erlang,#1}}{}
-\newcommand{\erl}[1]{\lstinline[style=erlang]`#1`}
-\newcommand{\erlsource}[1]{\lstinputlisting[style=erlang,basicstyle=\ttfamily\small]{#1}}
+\lstnewenvironment{Erl}[1][]{\lstset{language=lcc_erlang,#1}}{}
+\newcommand{\erl}[1]{\lstinline[language=lcc_erlang]`#1`}
+\newcommand{\erlsource}[1]{\lstinputlisting[language=lcc_erlang,basicstyle=\ttfamily\small]{#1}}
 
 % Código FD4
-\lstdefinestyle{fdd}{
-    basicstyle=\ttfamily,
-    keywordstyle = \color{blue},
-    morekeywords=let,
-    morekeywords=in,
-    morekeywords=fix,
-    morekeywords=print,
-    morekeywords=ifz then else,
-    morekeywords=add subt,
-    morekeywords=Nat,
+\lstdefinelanguage{lcc_fdd}{
+    basicstyle   = \ttfamily,
+    morekeywords = let,
+    morekeywords = in,
+    morekeywords = fix,
+    morekeywords = print,
+    morekeywords = ifz then else,
+    morekeywords = add subt,
+    morekeywords = Nat,
 }
-\lstnewenvironment{FDD}[1][]{\lstset{style=fdd,#1}}{}
-\newcommand{\fdd}[1]{\lstinline[style=fdd]`#1`}
-\newcommand{\fddsource}[1]{\lstinputlisting[style=fdd,basicstyle=\ttfamily\small]{#1}}
+\lstnewenvironment{FDD}[1][]{\lstset{language=lcc_fdd,#1}}{}
+\newcommand{\fdd}[1]{\lstinline[language=lcc_fdd]`#1`}
+\newcommand{\fddsource}[1]{\lstinputlisting[language=lcc_fdd,basicstyle=\ttfamily\small]{#1}}
 
 % Código Python
-\lstdefinestyle{Python}{
-    basicstyle=\ttfamily,
-    keywordstyle = \color{blue},
+\lstdefinelanguage{lcc_Python}{
+    language     = python,
+    basicstyle   = \ttfamily,
 }
-\lstnewenvironment{Py}[1][]{\lstset{style=Python,#1}}{}
-\newcommand{\py}[1]{\lstinline[style=Python]`#1`}
-\newcommand{\pysource}[1]{\lstinputlisting[style=Python,basicstyle=\ttfamily\small]{#1}}
+\lstnewenvironment{Py}[1][]{\lstset{language=lcc_Python,#1}}{}
+\newcommand{\py}[1]{\lstinline[language=lcc_Python]`#1`}
+\newcommand{\pysource}[1]{\lstinputlisting[language=lcc_Python,basicstyle=\ttfamily\small]{#1}}
 
 % Código Haskell
-\lstdefinestyle{Haskell}{
-    basicstyle=\ttfamily,
+\lstdefinelanguage{lcc_Haskell}{
+    language     = Haskell,
     keywordstyle = \color{blue},
+    basicstyle   = \ttfamily,
+    % morekeywords = data,
 }
-\lstnewenvironment{Hask}[1][]{\lstset{style=Haskell,#1}}{}
-\newcommand{\hask}[1]{\lstinline[style=Haskell]`#1`}
-\newcommand{\hasksource}[1]{\lstinputlisting[style=Haskell,basicstyle=\ttfamily\small]{#1}}
+\lstnewenvironment{Hask}[1][]{\lstset{language=lcc_Haskell,#1}}{}
+\newcommand{\hask}[1]{\lstinline[language=lcc_Haskell]`#1`}
+\newcommand{\hasksource}[1]{\lstinputlisting[language=lcc_Haskell,basicstyle=\ttfamily\small]{#1}}
 
 % Opcional: título y autor para metadata del PDF.
 % Útil por si hay símbolos especiales que no aparecen.
