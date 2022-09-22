@@ -97,15 +97,15 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 
 % TODO: Uniformidad. Definir entornos para no usar contador, etc.
 
-\newcounter{problema}
+\newcounter{ejercicio}
 
-% Los documentos pueden usar \def\tagproblema{..}
-\let\tagproblema\empty
+% Los documentos pueden usar \def\tagejercicio{..} para redefinir
+\def\tagejercicio{Ej. }
 
-\newenvironment{problema}[1][\unskip]
+\newenvironment{ejercicio}[1][\unskip]
 {
-    \stepcounter{problema}
-    \paragraph{\tagproblema\arabic{problema} #1.}
+    \stepcounter{ejercicio}
+    \paragraph{\tagejercicio\arabic{ejercicio} #1.}
 }
 {}
 
@@ -121,7 +121,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 }
 {}
 
-\newenvironment{problemaOff}[1][\unskip]
+\newenvironment{ejercicioOff}[1][\unskip]
 {\hide}
 {\endhide}
 
