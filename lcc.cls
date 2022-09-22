@@ -99,7 +99,8 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 
 \newcounter{ejercicio}
 
-% Los documentos pueden usar \def\tagejercicio{..} para redefinir
+% Los documentos pueden usar \def\tagejercicio{..} para redefinir esto.
+% Incluso puede quedar vacía.
 \def\tagejercicio{Ej. }
 
 \newenvironment{ejercicio}[1][\unskip]
@@ -151,9 +152,9 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
         {\endsolucionOn}
 }
 
+% Archivo de logo opcional, por defecto se usa el embebido.
 \def\@logofile{}
 \newcommand{\logofile}[1]{\def\@logofile{#1}}
-
 \def\@logo{
     \ifx\@logofile\empty
         \LogoUNR
@@ -162,9 +163,11 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
     \fi
 }
 
+% Código de la materia
 \def\@codigo{}
 \newcommand{\codigo}[1]{\def\@codigo{#1}}
 
+% Nombre de la materia
 \def\@materia{\textit{Materia}}
 \newcommand{\materia}[1]{\def\@materia{#1}}
 
