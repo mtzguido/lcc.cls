@@ -56,7 +56,38 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
     \datostrue
 }
 
+% Opciones de debug
+\DeclareOption{comm}{
+    \commentstrue
+}
+\DeclareOption{sol}{
+    \soluciones
+}
+\DeclareOption{debug}{
+    \commentstrue
+    \soluciones
+}
+
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+
+\newenvironment{solucion}
+{\hide}
+{\endhide}
+
+% Correr este comando en el .tex para hacer visibles a los entornos solucion
+\newcommand{\soluciones}[0]{
+    \renewenvironment{solucion}
+        {\solucionOn}
+        {\endsolucionOn}
+}
+
+% Comentarios
+\newif\ifcomments\commentsfalse
+\newcommand{\comm}[3]{\ifcomments{{\color{#1}[#2: #3]}}\fi}
+
+% Procesar opciones. Esto debe estar después de toda dependencia de los
+% "manejadores" de opciones. Ejemplo: \soluciones, que es llamado en el
+% manejo de debug.
 \ProcessOptions\relax
 
 \LoadClass[11pt,a4paper]{article}
@@ -131,21 +162,6 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \newenvironment{solucionOn}[1][\unskip]
 {\begin{mdframed}\textbf{Solución #1.}~}
 {\end{mdframed}}
-
-\newenvironment{solucion}
-{\hide}
-{\endhide}
-
-% Correr este comando en el .tex para hacer visibles a los entornos solucion
-\newcommand{\soluciones}[0]{
-    \renewenvironment{solucion}
-        {\solucionOn}
-        {\endsolucionOn}
-}
-
-% Comentarios
-\newif\ifcomments\commentsfalse
-\newcommand{\comm}[3]{\ifcomments{{\color{#1}[#2: #3]}}\fi}
 
 % Ejemplo para definir a alguien que comenta.
 \def\guido{\comm{blue}{Guido}}

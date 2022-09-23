@@ -15,10 +15,12 @@ código. Trae algunos lenguajes ya configurados (C, Erlang, Haskell,
 Python).
 
 - Hay un entorno `solucion` para las soluciones de ejercicios. Están
-_ocultas_ por defecto. Se pueden mostrar con `\soluciones`.
+_ocultas_ por defecto. Se pueden mostrar pasando la opción `sol` a la
+clase (o `debug`).
 
 - También se pueden agregar comentarios, por defecto ocultos, para
-discutir y/o dejar notas. Se pueden mostrar con `\commentstrue`.
+discutir y/o dejar notas. Se pueden mostrar pasando la opción `comm` a
+la clase (o `debug`).
 
 - El archivo PDF tiene incluidos metadatos con el título y autor (= la
 materia).
