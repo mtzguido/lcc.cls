@@ -122,11 +122,9 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 }
 {}
 
+% Ejercicio oculto. TODO: unificar con el otro y usar un flag?
+% Estaría bueno poder verlos en modo debug.
 \newenvironment{ejercicioOff}[1][\unskip]
-{\hide}
-{\endhide}
-
-\newenvironment{solucionOff}
 {\hide}
 {\endhide}
 
@@ -135,15 +133,8 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 {\end{mdframed}}
 
 \newenvironment{solucion}
-{\solucionOff}
-{\endsolucionOff}
-
-% Comentarios
-\newif\ifcomments\commentsfalse
-\newcommand{\comm}[3]{\ifcomments{{\color{#1}[#2: #3]}}\fi}
-
-% Ejemplo para definir a alguien que comenta.
-\def\guido{\comm{blue}{Guido}}
+{\hide}
+{\endhide}
 
 % Correr este comando en el .tex para hacer visibles a los entornos solucion
 \newcommand{\soluciones}[0]{
@@ -151,6 +142,13 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
         {\solucionOn}
         {\endsolucionOn}
 }
+
+% Comentarios
+\newif\ifcomments\commentsfalse
+\newcommand{\comm}[3]{\ifcomments{{\color{#1}[#2: #3]}}\fi}
+
+% Ejemplo para definir a alguien que comenta.
+\def\guido{\comm{blue}{Guido}}
 
 % Archivo de logo opcional, por defecto se usa el embebido.
 \def\@logofile{}
