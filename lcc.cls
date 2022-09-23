@@ -1,5 +1,5 @@
 \ProvidesClass{lcc}[
-2022/8/28 v0.2,
+2022/9/23 v0.3,
 Clase LaTeX para la LCC,
 Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 
