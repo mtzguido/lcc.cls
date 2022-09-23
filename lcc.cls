@@ -387,16 +387,26 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \def\@pdfauthor{}
 \newcommand{\pdfauthor}[1]{\def\@pdfauthor{#1}}
 
+% Borrar autor, por alguna razón no está vacío si no
+% y luego falla el chequeo. En todo caso el usuario puede
+% redefinir.
+\def\@author{}
+
 \AtBeginDocument{
     % Metadata PDF
 
     % Si pdftitle es vacío, usar titulo
     \ifx\@pdftitle\empty\def\@pdftitle{\@fulltitle}\fi
 
-    % Si pdfauthor es vacío, usar author. Si sigue vacío, usar materia.
-    % (FIXME: no toma materia, \@author no está vacío?)
-    % \ifx\@pdfauthor\empty\def\@pdfauthor{\@author}\fi
-    \ifx\@pdfauthor\empty\def\@pdfauthor{\@materia}\fi
+    % Si pdfauthor es vacío, usar author. A menos que esté vacío, en
+    % ese caso usar materia.
+    \ifx\@pdfauthor\empty
+      \ifx\@author\empty
+        \def\@pdfauthor{\@materia}
+      \else
+        \def\@pdfauthor{\@author}
+      \fi
+    \fi
 
     \hypersetup{
         pdfinfo={
