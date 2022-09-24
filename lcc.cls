@@ -120,6 +120,8 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \RequirePackage{lastpage}
 \RequirePackage[bottom]{footmisc}
 
+\RequirePackage[activate={true,nocompatibility},final,kerning=true,spacing=true]{microtype}
+
 % tikz es necesario para el logo embebido. Pero, incluso si no lo
 % fuera, para usarlo se necesita agregar la *librería* babel para que
 % ande junto al paquete babel. Sin ello, tenemos un error horrible de
