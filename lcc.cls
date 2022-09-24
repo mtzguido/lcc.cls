@@ -63,9 +63,13 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \DeclareOption{sol}{
     \soluciones
 }
+\DeclareOption{ocultos}{
+    \ejocultos
+}
 \DeclareOption{debug}{
     \commentstrue
     \soluciones
+    \ejocultos
 }
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
@@ -79,6 +83,18 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
     \renewenvironment{solucion}
         {\solucionOn}
         {\endsolucionOn}
+}
+
+% Ejercicio oculto. TODO: unificar con el otro y usar un flag?
+% Estaría bueno poder verlos en modo debug.
+\newenvironment{ejercicioOff}[1][\unskip]
+{\hide}
+{\endhide}
+
+\newcommand{\ejocultos}[0]{
+    \renewenvironment{ejercicioOff}
+        {\ejercicioOffOn}
+        {\endejercicioOffOn}
 }
 
 % Comentarios
@@ -153,11 +169,13 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 }
 {}
 
-% Ejercicio oculto. TODO: unificar con el otro y usar un flag?
-% Estaría bueno poder verlos en modo debug.
-\newenvironment{ejercicioOff}[1][\unskip]
-{\hide}
-{\endhide}
+\newenvironment{ejercicioOffOn}[1][\unskip]
+{
+    \it
+    \color{purple}
+    \paragraph{\tagejercicio OCULTO #1.}
+}
+{}
 
 \newenvironment{solucionOn}[1][\unskip]
 {\begin{mdframed}\textbf{Solución #1.}~}

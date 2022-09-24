@@ -36,6 +36,10 @@ directorio, ya casi está.
 de una práctica. Las otras opciones son `apunte`, `tp`, `parcial`,
 `recuperatorio`, `final`.
 
+- Se pueden agregar ejercicios ocultos con el entorno `ejercicioOff`. Se
+pueden mostrar pasando la opción `ocultos` (o `debug`), en otro color y
+sin cambiar la numeración de los otros.
+
 - Las configuraciones principales son:
 ```
 \codigo{R-000}
