@@ -134,8 +134,6 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 % Entorno para cosas ocultas.
 \NewEnviron{hide}{}{}
 
-\renewcommand{\figurename}{Figura}
-\renewcommand{\tablename}{Tabla}
 \renewcommand{\theenumi}{\bf\alph{enumi}}
 \renewcommand{\theenumii}{\roman{enumii}}
 \renewcommand{\labelenumi}{\theenumi)}
