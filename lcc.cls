@@ -177,9 +177,18 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 }
 {}
 
+\mdfdefinestyle{mdstyle_sol}{
+    leftmargin=1cm,
+    rightmargin=1cm,
+}
 \newenvironment{solucionOn}[1][\unskip]
-{\begin{mdframed}\textbf{Solución #1.}~}
-{\end{mdframed}}
+{
+    \begin{mdframed}[style=mdstyle_sol]
+    {\bf Solución #1.}
+}
+{
+    \end{mdframed}
+}
 
 % Ejemplo para definir a alguien que comenta.
 \def\guido{\comm{blue}{Guido}}
