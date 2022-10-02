@@ -391,12 +391,12 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 % Código FD4
 \lstdefinelanguage{lcc_fdd}{
     basicstyle   = \ttfamily,
-    morekeywords = let,
+    morekeywords = {let,rec},
     morekeywords = in,
     morekeywords = fix,
     morekeywords = print,
-    morekeywords = ifz then else,
-    morekeywords = add subt,
+    morekeywords = {ifz,then,else},
+    morekeywords = {add,subt},
     morekeywords = Nat,
 }
 \lstnewenvironment{FDD}[1][]{\lstset{language=lcc_fdd,#1}}{}
