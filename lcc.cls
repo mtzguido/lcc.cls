@@ -173,7 +173,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 {
     \it
     \color{purple}
-    \paragraph{\tagejercicio OCULTO #1.}
+    \paragraph{[OCULTO] \tagejercicio #1.}
 }
 {}
 
