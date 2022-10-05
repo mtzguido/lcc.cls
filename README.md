@@ -41,7 +41,7 @@ pueden mostrar pasando la opción `ocultos` (o `debug`), en otro color y
 sin cambiar la numeración de los otros.
 
 - Las configuraciones principales son:
-```
+```latex
 \codigo{R-000}
 \materia{Tipografía en \LaTeX}
 \num{1} % número de práctica
