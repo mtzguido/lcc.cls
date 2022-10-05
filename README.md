@@ -66,7 +66,7 @@ o importar un archivo usando `\csource{main.c}`.
 | Haskell      | `Hask`        | `\hask{}`      | `\hasksource{}`   |
 | Bash         | `Bash`        | `\bash{}`      | `\bashsource{}`   |
 | FD4          | `FDD`         | `\fdd{}`       | `\fddsource{}`    |
-| x86/x64      | `x86`         | `\xoch{}       | `\xochsource{}`   |
+| x86/x64      | `x86`         | `\xoch{}`      | `\xochsource{}`   |
 
 El soporte de lenguajes es básico. Se aceptan mejoras.
 - mathescape?
