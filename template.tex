@@ -179,4 +179,35 @@ int J$^{loop}$(int n) {
     \end{solucion}
 \end{ejercicio}
 
+\begin{ejercicio}
+    Acá hay código x86 (o x64..)
+    \begin{x86}
+str:
+	.string "I = %d\n"
+	.string "multi...
+		 línea!"
+	.globl	main
+
+main:
+	; no soy un comentario, soy un error de sintaxis!!!
+	# yo sí soy un comentario
+	leaq	str(%rip), %rdi
+	movq	$42, %rsi
+	xorq	%rax, %rax
+	call	printf@PLT
+
+	# subq	$8, %rsp
+	movb	$1234, %esi
+	movs	$1234, %esi
+	movl	$1234, %esi
+	movq	$1234, %esi
+	leaq	.LC0(%rip), %rdi
+	xorl	%eax, %eax
+	call	printf
+	xorl	%eax, %eax
+	XORl	%eax, %eax # en mayúsculas también anda
+	ret
+    \end{x86}
+\end{ejercicio}
+
 \end{document}

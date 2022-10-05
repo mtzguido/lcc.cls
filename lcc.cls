@@ -423,6 +423,59 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \newcommand{\hask}[1]{\lstinline[language=lcc_Haskell]`#1`}
 \newcommand{\hasksource}[1]{\lstinputlisting[language=lcc_Haskell,basicstyle=\ttfamily\small]{#1}}
 
+\lstdefinelanguage{lcc_x86}{
+    % Este arranca de cero, no importamos el que trae listings por defecto.
+    sensitive    = false, % ignorar case
+    basicstyle   = \ttfamily,
+    stringstyle  = \it\ttfamily\color{purple},
+    alsoletter   = .,
+    string       = [b]",
+    %
+    % Instrucciones, en azul.
+    keywordstyle = [1] \color{blue},
+    morekeywords = [1] {movb, movs, movl, movq},
+    morekeywords = [1] {xorb, xors, xorl, xorq},
+    morekeywords = [1] {leab, leas, leal, leaq},
+    morekeywords = [1] {addb, adds, addl, addq},
+    morekeywords = [1] {subb, subs, subl, subq},
+    morekeywords = [1] {popb, pops, popl, popq},
+    morekeywords = [1] {pushb, pushs, pushl, pushq},
+    morekeywords = [1] {call, ret, enter, leave},
+    %
+    % Registros, en rojo.
+    keywordstyle = [2] \color{red},
+    morekeywords = [2]{ % 32 bit
+        eax, edx,  ecx,  ebx,  esi, edi,  esp,  ebp,
+        e8,  e8d,  e8w,  e8b,  e9,  e9d,  e9w,  e9b,
+        e10, e10d, e10w, e10b, e11, e11d, e11w, e11b,
+        e12, e12d, e12w, e12b, e13, e13d, e13w, e13b,
+        e14, e14d, e14w, e14b, e15, e15d, e15w, e15b,
+        eip,
+    },
+    morekeywords = [2]{ % 64 bit
+        rax, rdx,  rcx,  rbx,  rsi, rdi,  rsp,  rbp,
+        r8,  r8d,  r8w,  r8b,  r9,  r9d,  r9w,  r9b,
+        r10, r10d, r10w, r10b, r11, r11d, r11w, r11b,
+        r12, r12d, r12w, r12b, r13, r13d, r13w, r13b,
+        r14, r14d, r14w, r14b, r15, r15d, r15w, r15b,
+        rip,
+    },
+    %
+    % Directivas del ensamblador.
+    keywordstyle = [3] \color{orange},
+    morekeywords = [3]{
+        .globl, .string
+    },
+    %
+    comment=[l]{\#},
+    commentstyle={\it\ttfamily\color{gray}},
+}
+
+\lstnewenvironment{x86}[1][]{\lstset{language=lcc_x86,#1}}{}
+\newcommand{\xoch}[1]{\lstinline[language=lcc_x86]`#1`}
+% ^ "X OCHenta y seis" :-)
+\newcommand{\xochsource}[1]{\lstinputlisting[language=lcc_x86,basicstyle=\ttfamily\small]{#1}}
+
 % Opcional: título y autor para metadata del PDF.
 % Útil por si hay símbolos especiales que no aparecen.
 \def\@pdftitle{}
