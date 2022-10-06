@@ -431,19 +431,25 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
     alsoletter   = .,
     string       = [b]",
     %
-    % Instrucciones, en azul.
-    keywordstyle = [1] \color{blue},
-    morekeywords = [1] {movb, movs, movl, movq},
-    morekeywords = [1] {xorb, xors, xorl, xorq},
-    morekeywords = [1] {leab, leas, leal, leaq},
-    morekeywords = [1] {addb, adds, addl, addq},
-    morekeywords = [1] {subb, subs, subl, subq},
-    morekeywords = [1] {popb, pops, popl, popq},
-    morekeywords = [1] {pushb, pushs, pushl, pushq},
+    % Instrucciones, en azul. (Revisar..)
+    keywordstyle = [1]{\color{blue}},
+    morekeywords = [1] {mov     , movb     , movs     , movl     , movq}     ,
+    morekeywords = [1] {xor     , xorb     , xors     , xorl     , xorq}     ,
+    morekeywords = [1] {lea     , leab     , leas     , leal     , leaq}     ,
+    morekeywords = [1] {add     , addb     , adds     , addl     , addq}     ,
+    morekeywords = [1] {sub     , subb     , subs     , subl     , subq}     ,
+    morekeywords = [1] {div     , divb     , divs     , divl     , divq}     ,
+    morekeywords = [1] {mul     , mulb     , muls     , mull     , mulq}     ,
+    morekeywords = [1] {idiv    , idivb    , idivs    , idivl    , idivq}    ,
+    morekeywords = [1] {imul    , imulb    , imuls    , imull    , imulq}    ,
+    morekeywords = [1] {pop     , popb     , pops     , popl     , popq}     ,
+    morekeywords = [1] {push    , pushb    , pushs    , pushl    , pushq}    ,
+    morekeywords = [1] {inc     , incb     , incs     , incl     , incq}     ,
+    morekeywords = [1] {cmpxchg , cmpxchgb , cmpxchgs , cmpxchgl , cmpxchgq} ,
     morekeywords = [1] {call, ret, enter, leave},
     %
     % Registros, en rojo.
-    keywordstyle = [2] \color{red},
+    keywordstyle = [2]{\color{red}},
     morekeywords = [2]{ % 32 bit
         eax, edx,  ecx,  ebx,  esi, edi,  esp,  ebp,
         e8,  e8d,  e8w,  e8b,  e9,  e9d,  e9w,  e9b,
@@ -462,10 +468,14 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
     },
     %
     % Directivas del ensamblador.
-    keywordstyle = [3] \color{orange},
+    keywordstyle = [3]{\color{orange}},
     morekeywords = [3]{
         .globl, .string
     },
+    %
+    % Prefijos. Estaría bueno ponerlos en negrita o algo así...
+    keywordstyle = [4]{\bfseries\ttfamily\color{blue}},
+    morekeywords = [4]{lock},
     %
     comment=[l]{\#},
     commentstyle={\it\ttfamily\color{gray}},
