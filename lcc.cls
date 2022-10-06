@@ -447,6 +447,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
     morekeywords = [1] {inc     , incb     , incs     , incl     , incq}     ,
     morekeywords = [1] {cmpxchg , cmpxchgb , cmpxchgs , cmpxchgl , cmpxchgq} ,
     morekeywords = [1] {call, ret, enter, leave},
+    morekeywords = [1] {mfence},
     %
     % Registros, en rojo.
     keywordstyle = [2]{\color{red}},
