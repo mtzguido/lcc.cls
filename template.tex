@@ -212,4 +212,23 @@ main:
     \end{x86}
 \end{ejercicio}
 
+\begin{nota}
+    Esta es una nota. Para agregar una podés usar
+\begin{verbatim}
+\begin{nota}
+    Texto de la nota
+\end{nota}
+\end{verbatim}
+    Aunque, si en tu documento tenés muchas notas pequeñas, podrías definir el siguiente comando
+\begin{verbatim}
+\newcommand{\notita}[1]{\begin{nota}#1\end{nota}}
+\end{verbatim}
+    y usarlo como:
+\begin{verbatim}
+\notita{Texto de la nota}
+\end{verbatim}
+    solamente tené en cuenta que eso posiblemente \textbf{no} ande
+    con cosas complejas dentro del cuerpo. En ese caso, usá el entorno.
+\end{nota}
+
 \end{document}
