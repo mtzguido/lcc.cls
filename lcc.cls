@@ -391,6 +391,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 % Código FD4
 \lstdefinelanguage{lcc_fdd}{
     basicstyle   = \ttfamily,
+    morekeywords = fun,
     morekeywords = {let,rec},
     morekeywords = in,
     morekeywords = fix,
