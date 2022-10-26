@@ -119,6 +119,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \RequirePackage{hyperref}
 \RequirePackage{lastpage}
 \RequirePackage[bottom]{footmisc}
+\RequirePackage[nameinlink]{cleveref}
 
 \RequirePackage[activate={true,nocompatibility},final,kerning=true,spacing=true]{microtype}
 
@@ -152,10 +153,14 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 
 \newenvironment{ejercicio}[1][\unskip]
 {
-    \stepcounter{ejercicio}
+    \refstepcounter{ejercicio}
     \paragraph{\tagejercicio\arabic{ejercicio} #1.}
 }
 {}
+
+% Para las referencias. TODO: agregar otras y verificar que esto anda bien.
+\crefname{ejercicio}{ejercicio}{ejercicios}
+\Crefname{ejercicio}{Ejercicio}{Ejercicios}
 
 \newenvironment{ejemplo}[1][\unskip]
 {
