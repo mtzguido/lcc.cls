@@ -390,6 +390,8 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 
 % Código FD4
 \lstdefinelanguage{lcc_fdd}{
+    comment=[l]{\#},
+    commentstyle={\it\ttfamily},
     basicstyle   = \ttfamily,
     morekeywords = fun,
     morekeywords = {let,rec},
