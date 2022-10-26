@@ -119,6 +119,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \RequirePackage{hyperref}
 \RequirePackage{lastpage}
 \RequirePackage[bottom]{footmisc}
+\RequirePackage{amsmath} % Tiene que estar antes de cleveref.. así que cargarlo siempre.
 \RequirePackage[nameinlink]{cleveref}
 
 \RequirePackage[activate={true,nocompatibility},final,kerning=true,spacing=true]{microtype}
