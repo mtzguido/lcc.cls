@@ -134,7 +134,7 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \usetikzlibrary{svg.path}
 
 % Entorno para cosas ocultas.
-\NewEnviron{hide}{}{}
+\NewEnviron{hide}{}
 
 \renewcommand{\theenumi}{\bf\alph{enumi}}
 \renewcommand{\theenumii}{\roman{enumii}}
