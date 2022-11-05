@@ -543,6 +543,21 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
     }
 }
 
+% Sintaxis para pruebas calculacionales.
+\NewEnviron{calc}
+{
+    \begingroup
+        \allowdisplaybreaks
+        \begin{align*}
+            \BODY
+        \end{align*}
+    \endgroup
+}
+\newcommand{\formO}[1]{& #1}
+\newcommand{\justO}[2]{#1 \qquad & \left \langle \, \text{#2} \, \right \rangle}
+\newcommand{\form}[1]{& #1 \\*}
+\newcommand{\just}[2]{#1 \qquad & \left \langle \, \text{#2} \, \right \rangle \\*}
+
 % Creado a partir de unr.jpg, convirtiendo a SVG con una herramienta online
 % y luego manualmente a esta invocación tikz.
 % TODO: automatizar, y conseguir un SVG *OFICIAL* desde la UNR.
