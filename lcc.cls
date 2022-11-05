@@ -232,6 +232,9 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 \def\@titulo{}
 \newcommand{\titulo}[1]{\def\@titulo{#1}}
 
+\def\@subtitulo{}
+\newcommand{\subtitulo}[1]{\def\@subtitulo{#1}}
+
 \def\@leyA{Facultad de Ciencias Exactas, Ingeniería y Agrimensura}
 \def\@leyB{Escuela de Ciencias Exactas y Naturales}
 \def\@leyC{Departamento de Ciencias de la Computación}
@@ -303,6 +306,10 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 
     {\LARGE\sc
         \@titulo
+    }
+
+    {\it
+        \@subtitulo
     }
 }
 \newcommand{\fancytitle}[1]{\def\@fancytitle{#1}}
@@ -496,8 +503,12 @@ Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
 % ^ "X OCHenta y seis" :-)
 \newcommand{\xochsource}[1]{\lstinputlisting[language=lcc_x86,basicstyle=\ttfamily\small]{#1}}
 
-% Opcional: título y autor para metadata del PDF.
-% Útil por si hay símbolos especiales que no aparecen.
+% Opcional: título y autor para metadata del PDF. Por defecto son el
+% tipo+título y materia, respectivamente, pero con estos comandos se
+% pueden cambiar a lo que sea. El subtitulo no aparece acá.
+%
+% Más que nada es útil por si hay símbolos especiales que no aparecen
+% bien en los metadatos pdf.
 \def\@pdftitle{}
 \newcommand{\pdftitle}[1]{\def\@pdftitle{#1}}
 \def\@pdfauthor{}
