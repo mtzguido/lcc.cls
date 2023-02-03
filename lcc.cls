@@ -1,7 +1,7 @@
-\ProvidesClass{lcc}[
-2022/9/23 v0.3,
-Clase LaTeX para la LCC,
-Por cualquier problema/mejora, ir a https://github.com/mtzguido/lcc.cls]
+\ProvidesClass{lcc}[Clase LaTeX para la LCC]
+% v0.4 2023-02-03
+% Por cualquier problema/mejora:
+%   https://github.com/mtzguido/lcc.cls
 
 \newif\ifdatos\datosfalse
 
