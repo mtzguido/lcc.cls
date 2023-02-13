@@ -5,7 +5,7 @@
 
 \newif\ifdatos\datosfalse
 
-\def\datosalumno{
+\long\def\datosalumno{
     \begin{mdframed}[]
         Nombre y Apellido:
     \end{mdframed}
@@ -203,7 +203,7 @@
 % Archivo de logo opcional, por defecto se usa el embebido.
 \def\@logofile{}
 \newcommand{\logofile}[1]{\def\@logofile{#1}}
-\def\@logo{
+\long\def\@logo{
     \ifx\@logofile\empty
         \LogoUNR
     \else
@@ -219,7 +219,7 @@
 \def\@materia{\textit{Materia}}
 \newcommand{\materia}[1]{\def\@materia{#1}}
 
-\def\@materiafull{%
+\long\def\@materiafull{%
     \ifx\@codigo\empty
     \else
     {\@codigo} ---
@@ -252,7 +252,7 @@
     \end{tabular}
 }
 
-\def\@fancyfooter{
+\long\def\@fancyfooter{
     \lfoot{\small \@shorttitle}
     \cfoot{\small \@date}
     \rfoot{\small Página \thepage/\pageref*{LastPage}}
@@ -279,7 +279,7 @@
     \@fancyfooter
 }
 
-\def\@fulltitle{%
+\long\def\@fulltitle{%
     \ifk
      {\@tipop}
      \ifx\@num\empty\else
@@ -295,7 +295,7 @@
 }
 \newcommand{\fulltitle}[1]{\def\@fulltitle{#1}}
 
-\def\@fancytitle{
+\long\def\@fancytitle{
     {
         \large\bf
         {\@tipop}
@@ -322,7 +322,7 @@
 
 % El headsep que fue restado.
 \addtolength{\textheight}{25pt}
-\def\makeheader{
+\long\def\makeheader{
     \thispagestyle{ps_primera}
     % Restar el \headsep de ps_resto
     \addtolength{\textheight}{-\headsep}
@@ -343,7 +343,7 @@
     \hrule
 }
 
-\def\maketitle{
+\long\def\maketitle{
     \makeheader
     \vspace{3mm}
 
