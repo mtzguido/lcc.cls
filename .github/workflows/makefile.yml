@@ -2,9 +2,11 @@ name: Makefile CI
 
 on:
   push:
-    branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+  schedule:
+    # Correr a medianoche (UTC?) todos los días
+    - cron: '0 0 * * *'
 
 jobs:
   build:
